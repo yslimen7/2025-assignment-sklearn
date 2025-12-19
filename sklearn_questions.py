@@ -48,7 +48,6 @@ from sklearn.metrics.pairwise import pairwise_distances
 
 to compute distances between 2 sets of samples.
 """
-
 import numpy as np
 import pandas as pd
 
@@ -72,12 +71,14 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
 
     def fit(self, X, y):
         """Fitting function.
+
         Parameters
         ----------
         X : ndarray, shape (n_samples, n_features)
             Data to train the model.
         y : ndarray, shape (n_samples,)
             Labels associated with the training data.
+
         Returns
         -------
         self : instance of KNearestNeighbors
@@ -95,10 +96,12 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
 
     def predict(self, X):
         """Predict function.
+
         Parameters
         ----------
         X : ndarray, shape (n_test_samples, n_features)
             Data to predict on.
+
         Returns
         -------
         y : ndarray, shape (n_test_samples,)
@@ -205,7 +208,7 @@ class MonthlySplit(BaseCrossValidator):
         idx_test : ndarray
             The testing set indices for that split.
         """
-        
+
         if self.time_col == 'index':
             dates = pd.to_datetime(X.index)
         else:
